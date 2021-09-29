@@ -8,10 +8,10 @@ export default function App() {
   return (
     <div>
       <Error>
-     <Errorboundary heroName='batsman' />
-     <Errorboundary heroName='superman' />
-     <Errorboundary heroName='jokery' />
-     </Error>
+     <Errorboundary heroName='batsman' /></Error>
+     <Error> <Errorboundary heroName='superman' /></Error>
+     <Error><Errorboundary heroName='joker' /></Error>
+     
     </div>
   );
 }
