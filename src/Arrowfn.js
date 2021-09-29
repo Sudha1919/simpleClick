@@ -10,7 +10,9 @@ constructor(){
   }
   this.handleClick = () => {
     this.setState(
-     { name : 'sandeep'}
+     { name : 'sandeep',
+       designation: 'quality controller'
+    }
     )}
 }
 render(){
@@ -18,6 +20,7 @@ render(){
     <div>
       <h2>Arrow Funtion</h2>
       <p>Name: {this.state.name}</p>
+      <p>Designation: {this.state.designation}</p>
       <button onClick={this.handleClick} >Click Here</button>
      
     </div>
