@@ -1,4 +1,4 @@
-import React,{PureComponent, Component} from "react";
+import React,{Component} from "react";
 import "./style.css";
 import Arrowfn from './Arrowfn';
 import Errorboundary from './Errorboundary';
@@ -24,27 +24,25 @@ class App extends Component{
  // }
  
   render(){
-   
+   console.log(this.props.age)
     return(
     <div>
-      <div> Age:{this.state.age} <span></span> </div>
-      <button onClick={this.onAgeUp}>Age Up</button>
-      <button onClick={this.onAgeDown}>Age Down</button>
+      <div> Age:{this.props.age} <span></span> </div>
+      <button onClick={this.props.onAgeUp}>Age Up</button>
+      <button onClick={this.props.onAgeDown}>Age Down</button>
     </div>
     )
   }
-  mapStateToProps =(state)=>{
-    return {
-      age: state.age
-    }
+ }
+const mapStateToProps =(state)=>{
+  return {
+    age: state.age
   }
- mapDispatchToProps =(dispatch) =>{
-    return{
-      onAgeUp: () => dispatch({type:'AGE_UP'}),
-      onAgeDown :() => dispatch({type:'AGE_DOWN'})
-    }
+}
+const mapDispatchToProps =(dispatch) =>{
+  return{
+    onAgeUp: () => dispatch({type:'AGE_UP'}),
+    onAgeDown :() => dispatch({type:'AGE_DOWN'})
   }
-  
-
 }
 export default connect(mapStateToProps,mapDispatchToProps)(App);

@@ -1,14 +1,14 @@
 const initialstate = {
-  age:21
+  age:22
 }
 const reducer =(state = initialstate, action)=>{
-const newState = {...state};
-if(action.type=='AGE_UP'){
-  newState++;
+  const a = {...state};
+if(action.type==='AGE_UP'){
+  a++;
 }
-if(action.type=='AGE_DOWN'){
-  newState--;
+if(action.type==='AGE_DOWN'){
+  a--;
 }
-return newState;
+return a;
 }
 export default reducer;
